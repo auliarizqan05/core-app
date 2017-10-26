@@ -13,7 +13,7 @@ public class UserService {
 
 	@Autowired
 	private UserDao userDao;
-	
+
 	public UserDao getUserDao() {
 		return userDao;
 	}
@@ -24,9 +24,12 @@ public class UserService {
 
 	public List<User> findAll() {
 		List<User> model = new ArrayList<User>();
-		System.out.println("msauk sini");
-		model = (List<User>) userDao.findAll();
-		
+		try {
+			System.out.println("msauk sini");
+			model = (List<User>) userDao.findAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return model;
 	}
 }

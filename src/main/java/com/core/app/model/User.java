@@ -1,6 +1,5 @@
 package com.core.app.model;
 
-import java.util.Set;
 
 import javax.persistence.*;
 
@@ -12,7 +11,7 @@ public class User {
 	private String address;
 	private String username;
 	private String password;
-	private Set<Role> roles;
+	private Role role;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,14 +40,31 @@ public class User {
 	}
 
 
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name = "role_id")
-	public Set<Role> getRoles() {
-		return roles;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
+	public void setRole(Role role) {
+		this.role = role;
 	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 
 }
