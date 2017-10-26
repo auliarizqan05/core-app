@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<property name="connection.pool_size">25</property>
+	<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+	<property name="current_session_context_class">thread</property>
+	<property name="cache.provider_class">
+		org.hibernate.cache.NoCacheProvider
+	</property>
+	<property name="show_sql">false</property>
+	
+	
+		<property name="hibernate.hbm2ddl.auto">update</property>
+	
+	<property name="format_sql">true</property>
+	<property name="use_sql_comments">true</property>
+	<property name="order_updates">true</property>
+	<property name="c3p0.min_size">5</property>
+	<property name="c3p0.max_size">25</property>
+	<property name="c3p0.timeout">1800</property>
+	
+	<property name="c3p0.max_statements">50</property>
+	<property name="bytecode.use_reflection_optimizer">true</property>
+	<!-- 
+	<property name="hibernate.cache.use_query_cache">true</property>
+	 -->
+	
+	<!-- 
+		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JTATransactionFactory</property>
+		<property name="hibernate.transaction.manager_lookup_class">org.hibernate.transaction.JBossTransactionManagerLookup</property>
+	-->
+	<!--  
+		<property name="connection.datasource">INSURADS</property>
+	-->
+	
+</session-factory>
+</hibernate-configuration>
